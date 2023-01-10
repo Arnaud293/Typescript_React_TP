@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import PostsLists from '../components/PostsLists';
-import './posts.css';
 
 import { PostData } from '../interfaces';
 
@@ -25,11 +24,11 @@ const Posts: React.FC = () => {
     }
 
     return (
-        <div className="post-container">
-            <h1>Main</h1>
-            <div style={{ display : 'flex', flexDirection: 'column'}}>
+        <div className="w-full flex items-center flex-col">
+            <h1 className='mt-3'>Main</h1>
+            <div className='flex flex-col w-[80%]'>
                 <label htmlFor="posts">Posts Numbers {postsQuantity}</label>
-                <input type="range" min={1} max={20} onChange={onChange}/>
+                <input type="range" min={1} max={20} defaultValue={5} onChange={onChange}/>
                 <PostsLists allPosts={allPosts} />
             </div>
         </div>
